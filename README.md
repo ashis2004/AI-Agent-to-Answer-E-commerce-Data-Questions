@@ -76,7 +76,6 @@ http://localhost:8000/docs
 ![Data Visualization](images/Screenshot3.png)
 
 
-### 💻 Server Console Output
 ![Server Console](images/Screenshot4.png)
 *Real-time logs showing queries and AI interactions and Shows how questions are converted into SQL queries and answers*
 
