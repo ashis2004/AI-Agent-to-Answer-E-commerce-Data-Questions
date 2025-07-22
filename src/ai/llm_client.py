@@ -56,29 +56,50 @@ Generate the SQL query:"""
         question_lower = question.lower()
         
         if "total sales" in question_lower:
-            return "SELECT SUM(total_sales) as total_sales FROM product_total_sales"
+            return "SELECT SUM(total_sales) as total_sales FROM product_total_sales WHERE total_sales IS NOT NULL"
         elif "roas" in question_lower:
             return """SELECT 
-                SUM(ad_sales) / SUM(ad_spend) as roas,
+                ROUND(SUM(ad_sales) / NULLIF(SUM(ad_spend), 0), 2) as roas,
                 SUM(ad_sales) as total_ad_sales,
                 SUM(ad_spend) as total_ad_spend
             FROM product_ad_sales 
-            WHERE ad_spend > 0"""
+            WHERE ad_spend > 0 AND ad_sales IS NOT NULL"""
         elif "highest cpc" in question_lower or "cost per click" in question_lower:
-            return """SELECT product_id, cpc, ad_spend, clicks 
+            return """SELECT 
+                product_id, 
+                cpc, 
+                ad_spend, 
+                clicks 
             FROM product_ad_sales 
-            WHERE clicks > 0 
+            WHERE cpc IS NOT NULL AND cpc > 0
             ORDER BY cpc DESC 
+            LIMIT 10"""
+        elif "conversion rate" in question_lower:
+            return """SELECT 
+                product_id,
+                conversion_rate,
+                clicks,
+                ad_orders
+            FROM product_ad_sales 
+            WHERE conversion_rate IS NOT NULL
+            ORDER BY conversion_rate DESC 
             LIMIT 10"""
         elif "high clicks" in question_lower and "low conversion" in question_lower:
             return """SELECT product_id, clicks, conversion_rate, ad_spend, ad_sales
             FROM product_ad_sales 
-            WHERE clicks > (SELECT AVG(clicks) FROM product_ad_sales)
-            AND conversion_rate < (SELECT AVG(conversion_rate) FROM product_ad_sales)
+            WHERE clicks > (SELECT AVG(clicks) FROM product_ad_sales WHERE clicks IS NOT NULL)
+            AND conversion_rate < (SELECT AVG(conversion_rate) FROM product_ad_sales WHERE conversion_rate IS NOT NULL)
             ORDER BY clicks DESC, conversion_rate ASC
             LIMIT 10"""
         else:
-            return "SELECT * FROM product_total_sales ORDER BY total_sales DESC LIMIT 10"
+            return """SELECT 
+                product_id, 
+                total_sales, 
+                total_orders 
+            FROM product_total_sales 
+            WHERE total_sales IS NOT NULL
+            ORDER BY total_sales DESC 
+            LIMIT 10"""
     
     def is_available(self) -> bool:
         """Check if Gemini API is available"""

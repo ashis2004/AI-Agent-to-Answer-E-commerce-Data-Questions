@@ -126,36 +126,68 @@ SQL Query:
         question_lower = question.lower()
         
         if "total sales" in question_lower:
-            return "SELECT SUM(total_sales) as total_sales FROM product_total_sales"
+            return "SELECT SUM(total_sales) as total_sales FROM product_total_sales WHERE total_sales IS NOT NULL"
         elif "roas" in question_lower or "return on ad spend" in question_lower:
-            return """
-                SELECT 
-                    SUM(ad_sales) / SUM(ad_spend) as roas
-                FROM product_ad_sales
-                WHERE ad_spend > 0
-            """
+            return """SELECT 
+                ROUND(SUM(ad_sales) / NULLIF(SUM(ad_spend), 0), 2) as roas,
+                SUM(ad_sales) as total_ad_sales,
+                SUM(ad_spend) as total_ad_spend
+            FROM product_ad_sales 
+            WHERE ad_spend > 0 AND ad_sales IS NOT NULL"""
         elif "highest cpc" in question_lower or "cost per click" in question_lower:
-            return """
-                SELECT 
-                    e.product_name,
-                    ads.cpc
-                FROM product_ad_sales ads
-                JOIN product_eligibility e ON ads.product_id = e.product_id
-                ORDER BY ads.cpc DESC
-                LIMIT 1
-            """
-        elif "product" in question_lower and "sales" in question_lower:
-            return """
-                SELECT 
-                    e.product_name,
-                    ts.total_sales,
-                    ts.total_orders
-                FROM product_total_sales ts
-                JOIN product_eligibility e ON ts.product_id = e.product_id
-                ORDER BY ts.total_sales DESC
-            """
+            return """SELECT 
+                product_id, 
+                cpc, 
+                ad_spend, 
+                clicks 
+            FROM product_ad_sales 
+            WHERE cpc IS NOT NULL AND cpc > 0
+            ORDER BY cpc DESC 
+            LIMIT 10"""
+        elif "conversion rate" in question_lower:
+            return """SELECT 
+                product_id,
+                conversion_rate,
+                clicks,
+                ad_orders
+            FROM product_ad_sales 
+            WHERE conversion_rate IS NOT NULL
+            ORDER BY conversion_rate DESC 
+            LIMIT 10"""
+        elif "top performing" in question_lower or "best product" in question_lower:
+            return """SELECT 
+                product_id, 
+                total_sales, 
+                total_orders 
+            FROM product_total_sales 
+            WHERE total_sales IS NOT NULL
+            ORDER BY total_sales DESC 
+            LIMIT 10"""
+        elif "eligible" in question_lower:
+            return """SELECT 
+                product_id, 
+                product_name, 
+                is_eligible_for_ads, 
+                eligibility_reason 
+            FROM product_eligibility 
+            WHERE is_eligible_for_ads = 1
+            LIMIT 10"""
+        elif "ad spend" in question_lower:
+            return """SELECT 
+                SUM(ad_spend) as total_ad_spend, 
+                COUNT(*) as campaigns,
+                AVG(ad_spend) as avg_ad_spend
+            FROM product_ad_sales 
+            WHERE ad_spend IS NOT NULL"""
         else:
-            return "SELECT COUNT(*) as total_products FROM product_eligibility"
+            return """SELECT 
+                product_id, 
+                total_sales, 
+                total_orders 
+            FROM product_total_sales 
+            WHERE total_sales IS NOT NULL
+            ORDER BY total_sales DESC 
+            LIMIT 10"""
     
     def execute_query(self, sql_query: str) -> Dict[str, Any]:
         """Execute SQL query and return results"""
