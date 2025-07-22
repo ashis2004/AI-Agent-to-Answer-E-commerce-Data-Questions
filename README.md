@@ -65,20 +65,20 @@ http://localhost:8000/docs
 ## 📸 Screenshots
 
 ### 🎨 Beautiful Web Interface
-![E-commerce AI Agent Interface](images/web-interface.png)
+![E-commerce AI Agent Interface](images/Screenshot1.png)
 *Modern gradient design with demo questions and intuitive user interface*
 
-### 🔍 Complete Workflow Visualization
-![Workflow Display](images/workflow-visualization.png) 
-*Transparent workflow showing Question → SQL Query → Answer → Chart progression*
+### 🔍 Workflow Visualization
+![Workflow Display](images/Screenshot2.png)
+*Shows how questions are converted into SQL queries and answers*
 
-### 📊 Interactive Data Visualizations  
-![Data Visualization](images/data-visualization.png)
-*Dynamic charts and graphs generated from your e-commerce data*
+### 📊 Interactive Data Visualizations
+![Data Visualization](images/Screenshot3.png)
+*Live charts rendered using Plotly for business insights*
 
 ### 💻 Server Console Output
-![Server Console](images/server-console.png)
-*Real-time server logs showing API requests and Gemini AI integration*
+![Server Console](images/Screenshot4.png)
+*Real-time logs showing queries and AI interactions*
 
 ## Project Structure
 
