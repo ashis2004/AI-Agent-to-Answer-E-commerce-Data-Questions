@@ -62,6 +62,24 @@ http://localhost:8000/docs
 4. **"Show me products with high clicks but low conversion rates"** - Optimization insights
 5. **"Compare organic sales vs ad sales for each product"** - Strategic analysis
 
+## 📸 Screenshots
+
+### 🎨 Beautiful Web Interface
+![E-commerce AI Agent Interface](images/web-interface.png)
+*Modern gradient design with demo questions and intuitive user interface*
+
+### 🔍 Complete Workflow Visualization
+![Workflow Display](images/workflow-visualization.png) 
+*Transparent workflow showing Question → SQL Query → Answer → Chart progression*
+
+### 📊 Interactive Data Visualizations  
+![Data Visualization](images/data-visualization.png)
+*Dynamic charts and graphs generated from your e-commerce data*
+
+### 💻 Server Console Output
+![Server Console](images/server-console.png)
+*Real-time server logs showing API requests and Gemini AI integration*
+
 ## Project Structure
 
 ```
