@@ -1,240 +1,66 @@
-# E-commerce AI Agent
+# 🛒 E-commerce AI Agent with Gemini 2.5 Integration
 
-# 🤖 E-commerce AI Agent with Gemini 2.5 Integration
+An advanced AI-powered agent that transforms natural language questions into SQL queries and provides comprehensive e-commerce insights with beautiful visualizations. Powered by Google's Gemini 2.5 Flash model for enhanced query generation.
 
-A powerful AI-driven analytics platform that transforms natural language questions into SQL queries and provides intelligent insights for e-commerce data using Google's Gemini 2.5 API.
+![E-commerce AI Agent](https://img.shields.io/badge/AI-Agent-blue) ![FastAPI](https://img.shields.io/badge/FastAPI-009688?logo=fastapi) ![Python](https://img.shields.io/badge/Python-3.8+-blue?logo=python) ![SQLite](https://img.shields.io/badge/SQLite-Database-blue?logo=sqlite) ![Gemini](https://img.shields.io/badge/Gemini-2.5-orange)
 
-## ✨ Features
+## ✨ Key Features
 
-### 🎯 **Complete Workflow Visualization**
-- **Question Processing**: Natural language understanding
-- **SQL Generation**: Powered by Google Gemini 2.5 Flash
-- **Smart Analytics**: Intelligent data analysis
-- **Interactive Charts**: Dynamic Plotly visualizations
+### 🧠 **Advanced AI Capabilities**
+- **Gemini 2.5 Flash** integration for superior natural language understanding
+- **Intelligent SQL Generation** with context-aware query optimization
+- **Multi-tier Fallback System** (Gemini → Ollama → Pattern-based)
+- **Real-time Query Analysis** with transparent workflow display
 
-### 🚀 **Advanced Capabilities**
-- **Real-time Streaming**: Live response generation
-- **Multi-table Analysis**: Complex JOIN operations
-- **Business Intelligence**: KPIs, RoAS, conversion rates
-- **Beautiful Web Interface**: Modern gradient UI
-- **API Documentation**: FastAPI with automatic docs
+### 🎨 **Beautiful User Experience**
+- **Modern Web Interface** with gradient styling and smooth animations
+- **Complete Workflow Visualization**: Question → SQL Query → Answer → Chart
+- **Streaming Responses** with character-by-character typing effects
+- **Interactive Charts** using Plotly for data visualization
+- **Mobile-responsive Design** for cross-platform access
 
-### 📊 **Data Coverage**
-- **Product Eligibility**: 4,381 records
-- **Ad Sales Performance**: 3,696 campaigns  
-- **Total Sales Data**: 702 product records
-- **Multi-dimensional Analytics**: 337+ unique products
+### 📊 **Comprehensive Analytics**
+- **Total Sales Analysis** with detailed breakdowns
+- **RoAS (Return on Ad Spend)** calculations and optimization insights
+- **Product Performance Metrics** across multiple dimensions
+- **Advertising Campaign Analysis** with cost efficiency tracking
+- **Cross-table Data Relationships** with intelligent JOIN operations
 
-## 🛠️ Technology Stack
+## � Real Business Data Integration
 
-- **Backend**: FastAPI, SQLite, SQLAlchemy
-- **AI/ML**: Google Gemini 2.5 API, LangChain
-- **Visualization**: Plotly, Chart.js
-- **Frontend**: HTML5, CSS3, JavaScript (ES6+)
-- **Database**: SQLite with optimized schemas
+### Dataset Overview
+- **4,381 Product Eligibility Records** - Comprehensive product catalog
+- **3,696 Ad Sales Records** - Detailed advertising performance data
+- **702 Total Sales Records** - Complete sales transaction history
+- **337 Unique Products** - Diverse product portfolio
+- **$1,004,904.56 Total Sales** - Substantial revenue dataset
+- **7.92 Average RoAS** - Strong advertising performance
 
-## 🚀 Quick Start
-
-### Prerequisites
-```bash
-Python 3.8+
-Google Gemini API Key
-Git
-```
-
-### Installation
-```bash
-# Clone the repository
-git clone https://github.com/ashis2004/NapQueen.git
-cd NapQueen
-
-# Install dependencies
-pip install -r requirements.txt
-
-# Set up your Gemini API key in config.py
-# GEMINI_API_KEY = "your-api-key-here"
-
-# Load sample data
-python load_real_data.py
-
-# Start the application
-python main.py
-```
-
-### Usage
-1. **Web Interface**: Visit `http://localhost:8000`
-2. **API Docs**: Access `http://localhost:8000/docs`
-3. **Health Check**: `http://localhost:8000/health`
-
-## 📝 Example Queries
-
-### Basic Analytics
-```
-"What is my total sales revenue?"
-"How much did I spend on advertising?"
-"What's my Return on Ad Spend (RoAS)?"
-```
-
-### Advanced Analysis
-```
-"Show me products with high clicks but low conversion rates"
-"Which campaigns have the best cost per acquisition?"
-"Find underperforming products in high-potential categories"
-```
-
-### Business Intelligence
-```
-"Compare organic sales vs ad-driven sales"
-"Which products should increase advertising spend?"
-"Show me profitable advertising opportunities"
-```
-
-## 🎨 Web Interface
-
-The application features a beautiful, responsive web interface with:
-- **Gradient Design**: Modern CSS with smooth animations
-- **Real-time Streaming**: Character-by-character response generation
-- **Workflow Display**: Question → SQL → Answer → Chart
-- **Interactive Charts**: Plotly-powered visualizations
-- **Demo Questions**: Pre-built examples for testing
-
-## 🔧 API Endpoints
-
-### Core Endpoints
-- `POST /ask` - Ask a question (regular response)
-- `POST /ask/stream` - Ask a question (streaming response)  
-- `GET /stats` - Database statistics
-- `GET /health` - Health check
-- `GET /charts/{filename}` - Serve generated charts
-
-### Sample Request
-```bash
-curl -X POST "http://localhost:8000/ask" 
-  -H "Content-Type: application/json" 
-  -d '{"question": "What is my total sales?", "include_chart": true}'
-```
-
-## 📊 Database Schema
-
-### Tables
-- **product_eligibility**: Product advertising eligibility
-- **product_ad_sales**: Advertising performance metrics
-- **product_total_sales**: Overall sales performance
-
-### Key Metrics
-- Sales Revenue: $1,004,904.56
-- RoAS: 7.92 (792% return)
-- Total Ad Spend: $126,741.18
-- Conversion Rates: Up to 23.47%
-
-## 🤖 AI Integration
-
-### Gemini 2.5 Features
-- **Natural Language Processing**: Advanced question understanding
-- **SQL Generation**: Intelligent query creation
-- **Context Awareness**: Business logic integration
-- **Fallback System**: Multiple AI provider support
-
-### Query Processing
-1. **Question Analysis**: NLP parsing and intent detection
-2. **Schema Mapping**: Database structure understanding  
-3. **SQL Generation**: Optimized query creation
-4. **Result Formatting**: Human-readable responses
-
-## 🔒 Security & Privacy
-
-- **API Key Management**: Secure configuration
-- **Input Validation**: SQL injection prevention
-- **Error Handling**: Graceful failure management
-- **Data Privacy**: Local processing, no external data sharing
-
-## 📈 Performance
-
-- **Response Time**: < 2 seconds average
-- **Concurrent Users**: Supports multiple simultaneous queries
-- **Database Optimization**: Indexed for fast retrieval
-- **Caching**: Intelligent result caching
-
-## 🛠️ Development
-
-### Project Structure
-```
-NapQueen/
-├── src/
-│   ├── ai/           # AI and LLM integration
-│   ├── api/          # FastAPI routes and endpoints  
-│   ├── database/     # Database models and setup
-│   ├── utils/        # Utility functions
-│   └── visualization/# Chart generation
-├── static/           # Web interface files
-├── data/            # Database and processed data
-├── dataset/         # Raw CSV data files
-└── requirements.txt # Python dependencies
-```
-
-### Contributing
-1. Fork the repository
-2. Create a feature branch
-3. Make your changes
-4. Add tests if applicable
-5. Submit a pull request
-
-## 📄 License
-
-This project is licensed under the MIT License - see the [LICENSE](LICENSE) file for details.
-
-## 👨‍💻 Author
-
-**Ashish Kumar**
-- GitHub: [@ashis2004](https://github.com/ashis2004)
-- Email: ap550083@gmail.com
-
-## 🙏 Acknowledgments
-
-- Google Gemini AI for advanced language processing
-- FastAPI for the excellent web framework
-- Plotly for beautiful data visualizations
-- The open-source community for inspiration
-
-## 🔗 Links
-
-- [Live Demo](http://localhost:8000) (when running locally)
-- [API Documentation](http://localhost:8000/docs)
-- [GitHub Repository](https://github.com/ashis2004/NapQueen)
-
----
-
-Made with ❤️ for the e-commerce analytics community
-
-![E-commerce AI Agent](https://img.shields.io/badge/AI-Agent-blue) ![FastAPI](https://img.shields.io/badge/FastAPI-009688?logo=fastapi) ![Python](https://img.shields.io/badge/Python-3.8+-blue?logo=python) ![SQLite](https://img.shields.io/badge/SQLite-Database-blue?logo=sqlite)
-
-## 🎯 Features
-
-- **Natural Language to SQL** conversion using local LLM
-- **Real-time Web Interface** with beautiful UI
-- **Streaming Responses** with typing effects
-- **Interactive Charts** using Plotly
-- **Real Business Data** analysis
-- **RESTful API** endpoints
-- **Local LLM Integration** with Ollama fallback
-
-## 💰 Business Insights
-
-Analyze your e-commerce data:
-- **Total Sales Calculations** 
-- **RoAS (Return on Ad Spend)** analysis
-- **Product Performance** metrics
-- **Cost Per Click (CPC)** analysis
-- **Advertising Campaign** optimization
+### Data Tables
+1. **`product_eligibility`** - Product catalog and advertising eligibility
+2. **`product_ad_sales`** - Advertising campaigns and performance metrics
+3. **`product_total_sales`** - Complete sales data including organic sales
 
 ## 🚀 Live Demo
 
-Access the web interface at: `http://localhost:8000`
+### Quick Start
+```bash
+# Start the server
+python main.py
 
-### Sample Questions:
-1. **"What is my total sales?"** - Get total revenue analysis
-2. **"Calculate the RoAS"** - Performance metrics  
-3. **"Which product had the highest CPC?"** - Top performer analysis
+# Access web interface
+http://localhost:8000
+
+# API Documentation
+http://localhost:8000/docs
+```
+
+### Sample Questions to Try:
+1. **"What is my total sales?"** - Revenue analysis with visualizations
+2. **"Calculate the RoAS (Return on Ad Spend)"** - Performance metrics
+3. **"Which product had the highest CPC?"** - Cost analysis
+4. **"Show me products with high clicks but low conversion rates"** - Optimization insights
+5. **"Compare organic sales vs ad sales for each product"** - Strategic analysis
 
 ## Project Structure
 
@@ -271,6 +97,240 @@ NapQueen/
 ```
 
 ## 🏗️ Setup & Installation
+
+### Prerequisites
+- Python 3.8 or higher
+- Git
+- Google Gemini API key (for enhanced AI capabilities)
+
+### Installation Steps
+
+1. **Clone the Repository**
+```bash
+git clone https://github.com/ashis2004/ecommerce-ai-agent.git
+cd ecommerce-ai-agent
+```
+
+2. **Install Dependencies**
+```bash
+pip install -r requirements.txt
+```
+
+3. **Configure API Keys**
+Edit `config.py` and add your Gemini API key:
+```python
+GEMINI_API_KEY = "your-gemini-api-key-here"
+```
+
+4. **Initialize Database**
+```bash
+python setup_real_db.py
+```
+
+5. **Start the Application**
+```bash
+python main.py
+```
+
+6. **Access the Interface**
+- Web UI: http://localhost:8000
+- API Docs: http://localhost:8000/docs
+- Health Check: http://localhost:8000/health
+
+## 🔧 Configuration
+
+### Environment Variables
+```python
+# Database Configuration
+DATABASE_PATH = "data/database.db"
+
+# Gemini AI Configuration  
+GEMINI_API_KEY = "your-api-key"
+
+# Server Configuration
+HOST = "0.0.0.0"
+PORT = 8000
+
+# LLM Fallback Configuration
+LLM_MODEL = "llama2"
+LLM_BASE_URL = "http://localhost:11434"
+```
+
+### Chart Generation
+Charts are automatically generated and saved to `static/charts/` with timestamp-based filenames.
+
+## 📡 API Endpoints
+
+### Core Endpoints
+- `GET /` - Web interface
+- `POST /ask` - Ask questions (returns complete response)
+- `POST /ask/stream` - Ask questions (streaming response)
+- `GET /health` - System health check
+- `GET /stats` - Database statistics
+- `GET /charts/{filename}` - Serve generated charts
+
+### Example API Usage
+```bash
+# Basic question
+curl -X POST "http://localhost:8000/ask" \
+  -H "Content-Type: application/json" \
+  -d '{"question": "What is my total sales?", "include_chart": true}'
+
+# Streaming response
+curl -X POST "http://localhost:8000/ask/stream" \
+  -H "Content-Type: application/json" \
+  -d '{"question": "Calculate the RoAS", "include_chart": true}'
+```
+
+## 🎯 Advanced Features
+
+### Workflow Transparency
+The system shows the complete analytical process:
+1. **🤔 Question Processing** - User's natural language input
+2. **🔍 SQL Generation** - AI-generated query using Gemini 2.5
+3. **💡 Answer Formation** - Natural language response
+4. **📊 Visualization** - Interactive charts when applicable
+
+### AI Integration Hierarchy
+1. **Primary**: Gemini 2.5 Flash (Google's latest model)
+2. **Secondary**: Ollama (Local LLM fallback)
+3. **Tertiary**: Pattern-based SQL generation
+
+### Smart Query Optimization
+- Context-aware SQL generation
+- Automatic table relationship detection
+- Performance-optimized queries
+- Error handling and validation
+
+## 📊 Sample Analytics
+
+### Business Metrics Available
+- **Revenue Analysis**: Total sales, average order value, sales trends
+- **Advertising Performance**: RoAS, CPC, CTR, conversion rates
+- **Product Insights**: Top performers, category analysis, inventory optimization
+- **Cost Efficiency**: Ad spend optimization, ACOS analysis
+- **Customer Behavior**: Session analysis, conversion funnels
+
+### Advanced Queries Supported
+- Multi-table JOIN operations
+- Complex aggregations and calculations
+- Time-series analysis capabilities
+- Statistical functions and ratios
+- Custom business logic implementation
+
+## 🛠️ Development
+
+### Project Structure
+```
+NapQueen/
+├── config.py                  # Configuration settings
+├── main.py                   # Application entry point
+├── requirements.txt          # Python dependencies
+├── setup_real_db.py         # Database initialization
+├── data/
+│   ├── database.db          # SQLite database
+│   ├── raw/                 # Original CSV files
+│   └── processed/           # Cleaned data
+├── src/
+│   ├── ai/
+│   │   ├── gemini_client.py # Gemini AI integration
+│   │   ├── llm_client.py    # Multi-LLM client
+│   │   └── query_processor.py # Query processing
+│   ├── api/
+│   │   ├── routes.py        # FastAPI endpoints
+│   │   └── streaming.py     # Streaming responses
+│   ├── database/
+│   │   ├── models.py        # SQLAlchemy models
+│   │   └── setup.py         # Database setup
+│   ├── visualization/
+│   │   └── charts.py        # Plotly chart generation
+│   └── utils/
+│       └── data_loader.py   # Data utilities
+├── static/
+│   ├── index.html          # Web interface
+│   └── charts/             # Generated charts
+└── tests/                  # Test files
+```
+
+### Technology Stack
+- **Backend**: FastAPI, SQLAlchemy, SQLite
+- **AI/ML**: Google Generative AI (Gemini 2.5), Ollama
+- **Frontend**: HTML5, CSS3, JavaScript (Vanilla)
+- **Visualization**: Plotly
+- **Data Processing**: Pandas, NumPy
+
+## 🔍 Testing
+
+### Sample Test Questions
+Run these questions to verify all features:
+
+**Basic Analytics:**
+- "What is my total sales?"
+- "How many total orders have I received?"
+- "What's my total advertising spend?"
+
+**Advanced Analytics:**
+- "Calculate the RoAS (Return on Ad Spend)"
+- "Which products have the highest conversion rates?"
+- "Show me products with high clicks but low conversion rates"
+
+**Complex Queries:**
+- "Compare organic sales vs ad-driven sales for each product"
+- "Find products with high page views but low sales"
+- "Which eligible products aren't running ads yet?"
+
+## 🚀 Deployment
+
+### Local Development
+```bash
+python main.py
+```
+
+### Production Considerations
+- Configure proper database backup
+- Set up environment variables for API keys
+- Use reverse proxy (nginx) for production
+- Implement rate limiting for API endpoints
+- Add authentication for sensitive operations
+
+## 🤝 Contributing
+
+1. Fork the repository
+2. Create a feature branch (`git checkout -b feature/amazing-feature`)
+3. Commit your changes (`git commit -m 'Add amazing feature'`)
+4. Push to the branch (`git push origin feature/amazing-feature`)
+5. Open a Pull Request
+
+## 📄 License
+
+This project is licensed under the MIT License - see the [LICENSE](LICENSE) file for details.
+
+## 🎯 Future Enhancements
+
+- [ ] Multi-language support for questions
+- [ ] Advanced machine learning predictions
+- [ ] Real-time data sync capabilities
+- [ ] Custom dashboard creation
+- [ ] Export functionality for reports
+- [ ] User authentication and permissions
+- [ ] Integration with popular e-commerce platforms
+
+## 📞 Support
+
+For support, email ap550083@gmail.com or create an issue on GitHub.
+
+## ⭐ Acknowledgments
+
+- Google Generative AI for Gemini 2.5 integration
+- FastAPI team for the excellent web framework
+- Plotly for visualization capabilities
+- The open-source community for inspiration
+
+---
+
+**Built with ❤️ by [Ashis Kumar](https://github.com/ashis2004)**
+
+*Transform your e-commerce data into actionable insights with AI-powered analytics!*
 
 ### Prerequisites
 - Python 3.8+
