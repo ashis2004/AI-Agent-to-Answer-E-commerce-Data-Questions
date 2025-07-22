@@ -70,15 +70,15 @@ http://localhost:8000/docs
 
 ### 🔍 Workflow Visualization
 ![Workflow Display](images/Screenshot2.png)
-*Shows how questions are converted into SQL queries and answers*
-
-### 📊 Interactive Data Visualizations
-![Data Visualization](images/Screenshot3.png)
 *Live charts rendered using Plotly for business insights*
+
+
+![Data Visualization](images/Screenshot3.png)
+
 
 ### 💻 Server Console Output
 ![Server Console](images/Screenshot4.png)
-*Real-time logs showing queries and AI interactions*
+*Real-time logs showing queries and AI interactions and Shows how questions are converted into SQL queries and answers*
 
 ## Project Structure
 

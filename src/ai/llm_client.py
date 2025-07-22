@@ -1,7 +1,10 @@
 import json
-import requests
+
 import google.generativeai as genai
+import requests
+
 import config
+
 
 class GeminiLLMClient:
     """Google Gemini AI client for natural language to SQL conversion"""
