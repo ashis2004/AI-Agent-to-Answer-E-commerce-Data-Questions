@@ -303,47 +303,13 @@ Run these questions to verify all features:
 python main.py
 ```
 
-### Production Considerations
-- Configure proper database backup
-- Set up environment variables for API keys
-- Use reverse proxy (nginx) for production
-- Implement rate limiting for API endpoints
-- Add authentication for sensitive operations
-
-## 🤝 Contributing
-
-1. Fork the repository
-2. Create a feature branch (`git checkout -b feature/amazing-feature`)
-3. Commit your changes (`git commit -m 'Add amazing feature'`)
-4. Push to the branch (`git push origin feature/amazing-feature`)
-5. Open a Pull Request
-
 ## 📄 License
 
 This project is licensed under the MIT License - see the [LICENSE](LICENSE) file for details.
 
-## 🎯 Future Enhancements
-
-- [ ] Multi-language support for questions
-- [ ] Advanced machine learning predictions
-- [ ] Real-time data sync capabilities
-- [ ] Custom dashboard creation
-- [ ] Export functionality for reports
-- [ ] User authentication and permissions
-- [ ] Integration with popular e-commerce platforms
-
 ## 📞 Support
 
 For support, email ap550083@gmail.com or create an issue on GitHub.
-
-## ⭐ Acknowledgments
-
-- Google Generative AI for Gemini 2.5 integration
-- FastAPI team for the excellent web framework
-- Plotly for visualization capabilities
-- The open-source community for inspiration
-
----
 
 **Built with ❤️ by [Ashis Kumar](https://github.com/ashis2004)**
 
@@ -438,9 +404,3 @@ The application uses a fallback LLM system:
 
 This project is licensed under the MIT License.
 
-## 🙏 Acknowledgments
-
-- FastAPI for the excellent web framework
-- Plotly for beautiful visualizations
-- SQLAlchemy for robust database ORM
-- Ollama for local LLM integration
