@@ -386,20 +386,6 @@ NapQueen/
 └── 📋 README.md        # This file
 ```
 
-## 🔧 Configuration
-
-The application uses a fallback LLM system:
-- **Primary**: Ollama with Llama 3.2 (if available)
-- **Fallback**: Pattern-based responses for offline use
-
-## 🤝 Contributing
-
-1. Fork the repository
-2. Create a feature branch: `git checkout -b feature-name`
-3. Commit changes: `git commit -m 'Add feature'`
-4. Push to branch: `git push origin feature-name`
-5. Submit a Pull Request
-
 ## 📜 License
 
 This project is licensed under the MIT License.
